@@ -1,23 +1,6 @@
-﻿function AceDirective() {
+﻿'use strict';
 
-    return {
-        restrict: 'E',
-        template: '<div>{\n}</div>',
-        replace: true,
-        scope: {},
-        link: function (scope, element, attrs) {
-
-            var item = element[0];
-            item.style.height = '200px';
-
-            scope.thisEditor = ace.edit(item);
-            scope.thisEditor.setFontSize(16);
-            scope.thisEditor.session.setMode("ace/mode/json");
-        }
-    }
-}
-
-function Ace2Directive() {
+angular.module('angularjs-canos-ace', []).directive('canosAce', function () {
 
     return {
         restrict: 'EA',
@@ -103,4 +86,4 @@ function Ace2Directive() {
             }, true);
         }
     }
-}
+});
